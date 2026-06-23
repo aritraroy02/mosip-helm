@@ -442,6 +442,11 @@ istio:
   host: dev3.mosip.net
   prefix: /
 
+## Collab environment URLs used in the landing page
+##
+collab:
+  unsubscribeUrl: https://unsubscribe.collab.mosip.net
+
 # Specify the path to the primary index file. Leave empty if you want to use a custom index file.
 indexFile: "default-index.html"
 

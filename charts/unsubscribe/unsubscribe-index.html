@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Unsubscribe - MOSIP Collab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon"
+    href="https://raw.githubusercontent.com/mosip/documentation/1.2.0/docs/_images/mosip-favicon.png">
+</head>
+
+<style>
+  body {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+  }
+
+  .border-bottom-center {
+    position: relative;
+    display: inline-block;
+  }
+
+  .border-bottom-center::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #F4F8FA;
+    transform: translateX(-50%) scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .border-bottom-center:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+</style>
+
+<body class="flex flex-col min-h-screen bg-[#EFF3F8]">
+
+  <!-- Header -->
+  <header
+    class="bg-[url('https://raw.githubusercontent.com/mosip/documentation/1.2.0/docs/_images/header_background.png')] px-[80px] pt-[38px] pb-[30px] max-[730px]:pt-[20px] bg-cover max-[870px]:px-[20px]">
+
+    <!-- Nav -->
+    <nav class="flex justify-between items-center">
+      <div>
+        <a href="{{ .Values.collab.homepageUrl }}">
+          <img alt="mosip logo"
+            class="h-[68px] w-[169px] cursor-pointer max-[460px]:h-[48px] max-[460px]:w-[109px]"
+            src="https://raw.githubusercontent.com/mosip/documentation/1.2.0/docs/_images/new_Mosip_logo.png" />
+        </a>
+      </div>
+      <div class="flex space-x-6 items-center max-[870px]:space-x-3">
+        <div class="flex items-center space-x-6 max-[740px]:hidden">
+          <div class="group text-[#ffffff] text-[16px] flex items-center cursor-pointer">
+            <span class="group-hover:border-b mr-2">About MOSIP</span>
+            <span
+              class="w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-white -rotate-180 group-hover:rotate-0 duration-300"></span>
+            <div
+              class="absolute top-20 mt-[6px] w-[174px] -ml-14 bg-white rounded-md shadow-lg hidden z-50 group-hover:block">
+              <div class="p-2">
+                <a href="https://mosip.io/" target="_blank"
+                  class="block hover:bg-gray-200 px-2 py-2 text-[#3E3E3E] border-b border-[#C4D6E6] text-[14px] flex items-center space-x-1">
+                  <span>MOSIP Website</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14.529" height="13.827" viewBox="0 0 14.529 13.827">
+                    <g transform="translate(-1106.75 -63.402)">
+                      <path d="M160.606-751.343l-.606-.606,7.185-7.185h-4.242V-760h5.713v5.713h-.866v-4.242Z"
+                        transform="translate(952.372 823.652)" fill="#3e3e3e" stroke="#3e3e3e" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="0.5" />
+                      <line y2="10.827" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x1="10.827" transform="translate(1107.5 76.48)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x2="5.414" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line y1="5.414" transform="translate(1118.327 71.066)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                    </g>
+                  </svg>
+                </a>
+                <a href="https://docs.mosip.io/1.2.0" target="_blank"
+                  class="block hover:bg-gray-200 px-2 py-2 text-[#3E3E3E] border-b border-[#C4D6E6] text-[14px] flex items-center space-x-1">
+                  <span>Documentation</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14.529" height="13.827" viewBox="0 0 14.529 13.827">
+                    <g transform="translate(-1106.75 -63.402)">
+                      <path d="M160.606-751.343l-.606-.606,7.185-7.185h-4.242V-760h5.713v5.713h-.866v-4.242Z"
+                        transform="translate(952.372 823.652)" fill="#3e3e3e" stroke="#3e3e3e" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="0.5" />
+                      <line y2="10.827" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x1="10.827" transform="translate(1107.5 76.48)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x2="5.414" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line y1="5.414" transform="translate(1118.327 71.066)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                    </g>
+                  </svg>
+                </a>
+                <a href="https://www.youtube.com/@mosip16" target="_blank"
+                  class="block px-2 py-2 hover:bg-gray-200 text-[#3E3E3E] text-[14px] flex items-center space-x-1">
+                  <span>YouTube Videos</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14.529" height="13.827" viewBox="0 0 14.529 13.827">
+                    <g transform="translate(-1106.75 -63.402)">
+                      <path d="M160.606-751.343l-.606-.606,7.185-7.185h-4.242V-760h5.713v5.713h-.866v-4.242Z"
+                        transform="translate(952.372 823.652)" fill="#3e3e3e" stroke="#3e3e3e" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="0.5" />
+                      <line y2="10.827" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x1="10.827" transform="translate(1107.5 76.48)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line x2="5.414" transform="translate(1107.5 65.653)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                      <line y1="5.414" transform="translate(1118.327 71.066)" fill="none" stroke="#3e3e3e"
+                        stroke-linecap="round" stroke-width="1.5" />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="https://community.mosip.io/" target="_blank"
+            class="group text-[#ffffff] text-[16px] flex items-center space-x-1 border-bottom-center cursor-pointer pb-1">
+            <span>Contact Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12.529" height="11.827" viewBox="0 0 14.529 13.827">
+              <g transform="translate(-1106.75 -63.402)">
+                <path d="M160.606-751.343l-.606-.606,7.185-7.185h-4.242V-760h5.713v5.713h-.866v-4.242Z"
+                  transform="translate(952.372 823.652)" fill="#fff" stroke="#fff" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="0.5" />
+                <line y2="10.827" transform="translate(1107.5 65.653)" fill="none" stroke="#fff"
+                  stroke-linecap="round" stroke-width="1.5" />
+                <line x1="10.827" transform="translate(1107.5 76.48)" fill="none" stroke="#fff"
+                  stroke-linecap="round" stroke-width="1.5" />
+                <line x2="5.414" transform="translate(1107.5 65.653)" fill="none" stroke="#fff"
+                  stroke-linecap="round" stroke-width="1.5" />
+                <line y1="5.414" transform="translate(1118.327 71.066)" fill="none" stroke="#fff"
+                  stroke-linecap="round" stroke-width="1.5" />
+              </g>
+            </svg>
+          </a>
+          <span class="text-[#ffffff] text-[16px] cursor-pointer border-bottom-center">
+            <a target="_blank" href="https://mosip.stoplight.io/">APIs</a>
+          </span>
+        </div>
+        <a class="flex align-center justify-center items-center text-[#ffffff] text-[16px] border-solid border-[1px] h-[43px] w-[86px] rounded-[10px] hover:bg-[#ffffff] hover:text-[#1763AC]"
+          href="{{ .Values.collab.getUinUrl }}" target="_blank">Get UIN</a>
+      </div>
+    </nav>
+
+    <!-- Back to homepage -->
+    <div class="mt-6">
+      <a href="{{ .Values.collab.homepageUrl }}"
+        class="inline-flex items-center space-x-2 text-white text-[14px] border border-white rounded-[8px] px-4 py-2 hover:bg-white hover:text-[#01315F] transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        <span>Back to homepage</span>
+      </a>
+    </div>
+
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex items-start justify-center py-10 px-4">
+    <div class="bg-white rounded-[16px] shadow-lg w-full max-w-[580px] p-8">
+
+      <h1 class="text-[24px] font-bold text-[#01315F] mb-2">Email Un-Subscription Form</h1>
+      <p class="text-[13px] text-[#555555] mb-6 leading-relaxed">
+        We are sorry to see you go. Please complete the form below to unsubscribe from all future emails from the MOSIP
+        Collab environment.
+      </p>
+
+      <!-- Success message (hidden by default) -->
+      <div id="successMsg" class="hidden mb-4 bg-[#EDF7ED] border border-[#4CAF50] rounded-[8px] px-4 py-3 text-[13px] text-[#2E7D32]">
+        You have been successfully unsubscribed. You will no longer receive emails from the MOSIP Collab environment.
+      </div>
+
+      <form id="unsubscribeForm" novalidate>
+
+        <!-- Email Address -->
+        <div class="mb-5">
+          <label for="email" class="block text-[13px] font-semibold text-[#333333] mb-1">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          <input type="email" id="email" name="email" required
+            placeholder="Enter the email you wish to unsubscribe"
+            class="w-full border border-[#D1D5DB] rounded-[6px] px-4 py-2.5 text-[13px] text-[#555555] placeholder-[#AAAAAA] focus:outline-none focus:ring-2 focus:ring-[#1763AC] focus:border-transparent" />
+          <p id="emailError" class="hidden mt-1 text-[12px] text-red-500">Please enter a valid email address.</p>
+        </div>
+
+        <!-- Reason for Unsubscribing -->
+        <div class="mb-5">
+          <label for="reason" class="block text-[13px] font-semibold text-[#333333] mb-1">
+            Reason for Unsubscribing <span class="text-red-500">*</span>
+          </label>
+          <div class="relative">
+            <select id="reason" name="reason" required
+              class="w-full border border-[#D1D5DB] rounded-[6px] px-4 py-2.5 text-[13px] text-[#555555] bg-white focus:outline-none focus:ring-2 focus:ring-[#1763AC] focus:border-transparent cursor-pointer">
+              <option value="" disabled selected>Select a reason</option>
+              <option value="no_longer_interested">No longer interested</option>
+              <option value="too_many_emails">Too many emails</option>
+              <option value="content_not_relevant">Content not relevant to me</option>
+              <option value="never_signed_up">I never signed up for this</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="#777" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+          <p id="reasonError" class="hidden mt-1 text-[12px] text-red-500">Please select a reason.</p>
+        </div>
+
+        <!-- Additional Comments -->
+        <div class="mb-5">
+          <label for="comments" class="block text-[13px] font-semibold text-[#333333] mb-1">
+            Additional Comments
+          </label>
+          <textarea id="comments" name="comments" rows="4"
+            placeholder="Any additional feedback (optional)"
+            class="w-full border border-[#D1D5DB] rounded-[6px] px-4 py-2.5 text-[13px] text-[#555555] placeholder-[#AAAAAA] resize-none focus:outline-none focus:ring-2 focus:ring-[#1763AC] focus:border-transparent"></textarea>
+        </div>
+
+        <!-- Agreement Checkbox -->
+        <div class="mb-5 flex items-center space-x-2">
+          <input type="checkbox" id="agree" name="agree"
+            class="w-4 h-4 accent-[#1763AC] cursor-pointer flex-shrink-0" />
+          <label for="agree" class="text-[13px] text-[#333333] cursor-pointer">
+            I agree to unsubscribe <span class="text-red-500">*</span>
+          </label>
+        </div>
+        <p id="agreeError" class="hidden -mt-3 mb-4 text-[12px] text-red-500">You must agree to unsubscribe.</p>
+
+        <!-- Warning Box -->
+        <div class="mb-6 bg-[#FFF8EC] border border-[#F5A623] rounded-[8px] px-4 py-3 flex items-start space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="#F5A623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p class="text-[12px] text-[#555555] leading-relaxed">
+            <span class="font-bold text-[#F5A623]">Important:</span> Unsubscribing will also delete your associated
+            UIN. Once unsubscribed, you will not be able to use this UIN in the future. To generate a new UIN, click
+            <a href="{{ .Values.collab.getUinUrl }}" target="_blank" class="underline text-[#1763AC] hover:text-[#0f4f8f]">here</a>.
+          </p>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="submitBtn"
+          class="w-full bg-[#1763AC] hover:bg-[#0f4f8f] active:bg-[#0a3d6e] text-white text-[15px] font-semibold py-3 rounded-[6px] transition-colors duration-200 flex items-center justify-center space-x-2">
+          <span>Submit</span>
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-[#E5E7EB] h-[56px] flex items-center justify-center">
+    <p class="text-[#727272] text-[14px]">© 2024 All Rights Reserved MOSIP</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('unsubscribeForm');
+    const emailInput = document.getElementById('email');
+    const reasonSelect = document.getElementById('reason');
+    const agreeCheckbox = document.getElementById('agree');
+    const emailError = document.getElementById('emailError');
+    const reasonError = document.getElementById('reasonError');
+    const agreeError = document.getElementById('agreeError');
+    const successMsg = document.getElementById('successMsg');
+    const submitBtn = document.getElementById('submitBtn');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function clearErrors() {
+      emailError.classList.add('hidden');
+      reasonError.classList.add('hidden');
+      agreeError.classList.add('hidden');
+      emailInput.classList.remove('border-red-500');
+      reasonSelect.classList.remove('border-red-500');
+    }
+
+    function validate() {
+      let valid = true;
+      clearErrors();
+
+      if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        valid = false;
+      }
+
+      if (!reasonSelect.value) {
+        reasonError.classList.remove('hidden');
+        reasonSelect.classList.add('border-red-500');
+        valid = false;
+      }
+
+      if (!agreeCheckbox.checked) {
+        agreeError.classList.remove('hidden');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+        </svg>
+        <span>Submitting...</span>
+      `;
+
+      try {
+        const payload = {
+          email: emailInput.value.trim(),
+          reason: reasonSelect.value,
+          comments: document.getElementById('comments').value.trim()
+        };
+
+        const response = await fetch('{{ .Values.collab.apiEndpoint }}', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          form.classList.add('hidden');
+          successMsg.classList.remove('hidden');
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Submit</span>';
+        alert('Something went wrong. Please try again later.');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

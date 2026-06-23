@@ -596,9 +596,11 @@
     </div>
   </div>
 
-  <div class="h-[64px] flex items-center justify-center">
-    <p class="text-[#727272] text-[16px]">© 2024 All Rights Reserved MOSIP</p>
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#E5E7EB] h-[64px] flex flex-col items-center justify-center">
+    <p class="text-[#727272] text-[14px]">© 2024 All Rights Reserved MOSIP</p>
+    <a href="{{ .Values.collab.unsubscribeUrl }}" class="text-[#727272] text-[13px] underline hover:text-[#1763AC]">Unsubscribe</a>
   </div>
+  <div class="h-[64px]"></div>
 
   <!-- Java Script -->
   <script>
